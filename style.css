@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: linear-gradient(135deg, #0f4c81, #2563eb);
+  padding: 18px 0;
+  color: white;
+}
+
+.navbar .container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #0f4c81, #2563eb);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 19px;
+  opacity: 0.9;
+}
+
+/* MAIN CARD */
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.form-card {
+  background: white;
+  margin: -40px auto 50px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0f4c81;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* BUTTON */
+
+.predict-button {
+  display: block;
+  margin: 35px auto 0;
+  padding: 15px 45px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #0f4c81);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.predict-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* RESULT */
+
+.prediction-result {
+  margin-top: 35px;
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ecfdf5, #dbeafe);
+  text-align: center;
+  border: 2px solid #bfdbfe;
+}
+
+.prediction-result h2 {
+  color: #0f4c81;
+}
+
+.prediction-number {
+  font-size: 55px;
+  font-weight: bold;
+  color: #2563eb;
+  margin: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  background: #111827;
+  color: white;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    margin: -25px 15px 40px;
+    padding: 25px;
+  }
+}

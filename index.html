@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Library AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">📚 Smart Library AI</div>
+
+        <div>AI-Powered Library System</div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <h1>📚 Smart Library AI</h1>
+
+      <p>Machine Learning Based Book Borrowing Prediction</p>
+    </section>
+
+    <!-- FORM -->
+
+    <div class="container">
+      <div class="form-card">
+        <h2>👨‍🎓 Student Information</h2>
+
+        <p class="subtitle">
+          Enter student information to predict expected books borrowed.
+        </p>
+
+        <form action="/predict" method="POST">
+          <div class="form-grid">
+            <!-- Student ID -->
+
+            <div class="form-group">
+              <label>Student ID</label>
+
+              <input
+                type="number"
+                name="Student_ID"
+                placeholder="e.g. 1001"
+                required
+              />
+            </div>
+
+            <!-- Age -->
+
+            <div class="form-group">
+              <label>Age</label>
+
+              <input type="number" name="Age" placeholder="e.g. 21" required />
+            </div>
+
+            <!-- Semester -->
+
+            <div class="form-group">
+              <label>Semester</label>
+
+              <input
+                type="number"
+                name="Semester"
+                placeholder="e.g. 6"
+                required
+              />
+            </div>
+
+            <!-- CGPA -->
+
+            <div class="form-group">
+              <label>CGPA</label>
+
+              <input
+                type="number"
+                step="0.01"
+                name="CGPA"
+                placeholder="e.g. 3.40"
+                min="0"
+                max="4"
+                required
+              />
+            </div>
+
+            <!-- Library Visits -->
+
+            <div class="form-group">
+              <label>Library Visits</label>
+
+              <input
+                type="number"
+                name="Library_Visits"
+                placeholder="e.g. 15"
+                min="0"
+                required
+              />
+            </div>
+
+            <!-- Study Hours -->
+
+            <div class="form-group">
+              <label>Study Hours</label>
+
+              <input
+                type="number"
+                step="0.1"
+                name="Study_Hours"
+                placeholder="e.g. 4"
+                min="0"
+                required
+              />
+            </div>
+
+            <!-- Previous Borrowing -->
+
+            <div class="form-group">
+              <label>Previous Borrowing</label>
+
+              <input
+                type="number"
+                name="Previous_Borrowing"
+                placeholder="e.g. 10"
+                min="0"
+                required
+              />
+            </div>
+
+            <!-- Ebooks -->
+
+            <div class="form-group">
+              <label>E-books Accessed</label>
+
+              <input
+                type="number"
+                name="Ebooks_Accessed"
+                placeholder="e.g. 20"
+                min="0"
+                required
+              />
+            </div>
+
+            <!-- Membership -->
+
+            <div class="form-group">
+              <label>Membership Years</label>
+
+              <input
+                type="number"
+                step="0.1"
+                name="Membership_Years"
+                placeholder="e.g. 3"
+                min="0"
+                required
+              />
+            </div>
+
+            <!-- Gender -->
+
+            <div class="form-group">
+              <label>Gender</label>
+
+              <select name="Gender" required>
+                <option value="">Select Gender</option>
+
+                <option value="Male">Male</option>
+
+                <option value="Female">Female</option>
+              </select>
+            </div>
+
+            <!-- Department -->
+
+            <div class="form-group">
+              <label>Department</label>
+
+              <select name="Department" required>
+                <option value="">Select Department</option>
+
+                <option value="Computer Science">Computer Science</option>
+
+                <option value="Education">Education</option>
+
+                <option value="Engineering">Engineering</option>
+
+                <option value="Information Management">
+                  Information Management
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+
+          <button type="submit" class="predict-button">🤖 Predict Books</button>
+        </form>
+
+        <!-- RESULT -->
+
+        {% if prediction is defined and prediction is not none %}
+
+        <div class="prediction-result">
+          <h2>🎯 AI Prediction</h2>
+
+          <p>Expected Books Borrowed</p>
+
+          <div class="prediction-number">{{ prediction }}</div>
+
+          <p>books</p>
+        </div>
+
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <h3>📚 Smart Library AI</h3>
+
+      <p>Machine Learning Library Prediction System</p>
+
+      <p>zohaib khan Developed as an Information Management project</p>
+    </footer>
+  </body>
+</html>
